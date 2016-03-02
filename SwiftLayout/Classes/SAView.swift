@@ -1,5 +1,5 @@
 //
-//  SLView.swift
+//  SAView.swift
 //  SwiftLayout
 //
 //  Created by Juan Alvarez on 2/2/16.
@@ -14,7 +14,7 @@ import Cocoa
 
 // MARK: Factory and Initializer Methods -
 
-public extension SLView {
+public extension SAView {
     
     public class func newAutoLayoutView() -> Self {
         let view = self.init()
@@ -32,17 +32,17 @@ public extension SLView {
 
 // MARK: - Pin Edges to Superview -
 
-public extension SLView {
+public extension SAView {
     
-    public func autoPinSidesToSuperViewEdges(insets: SLEdgeInsets = SLEdgeInsetsZero) -> LayoutConstraintsArray {
+    public func autoPinSidesToSuperViewEdges(insets: SAEdgeInsets = SAEdgeInsetsZero) -> LayoutConstraintsArray {
         return autoPinEdgesToSuperViewEdges([.Leading, .Trailing], insets: insets)
     }
     
-    public func autoPinTopAndBottomToSuperViewEdges(insets: SLEdgeInsets = SLEdgeInsetsZero) -> LayoutConstraintsArray {
+    public func autoPinTopAndBottomToSuperViewEdges(insets: SAEdgeInsets = SAEdgeInsetsZero) -> LayoutConstraintsArray {
         return autoPinEdgesToSuperViewEdges([.Top, .Bottom], insets: insets)
     }
     
-    public func autoPinEdgesToSuperViewEdges(edges: [SLEdge] = [.Top, .Bottom, .Leading, .Trailing], insets: SLEdgeInsets = SLEdgeInsetsZero) -> LayoutConstraintsArray {
+    public func autoPinEdgesToSuperViewEdges(edges: [SAEdge] = [.Top, .Bottom, .Leading, .Trailing], insets: SAEdgeInsets = SAEdgeInsetsZero) -> LayoutConstraintsArray {
         guard edges.count > 0 else {
             fatalError("You need at least edge for autoPinEdgesToSuperViewEdges()")
         }
@@ -69,7 +69,7 @@ public extension SLView {
     }
     
     #if os(iOS) || os(tvOS)
-    public func autoPinEdgesToSuperviewMargins(edges: [SLEdge] = [.Top, .Bottom, .Leading, .Trailing]) -> LayoutConstraintsArray {
+    public func autoPinEdgesToSuperviewMargins(edges: [SAEdge] = [.Top, .Bottom, .Leading, .Trailing]) -> LayoutConstraintsArray {
         guard edges.count > 0 else {
             fatalError("You need at least edge for autoPinEdgesToSuperviewMargins()")
         }
@@ -97,7 +97,7 @@ public extension SLView {
     #endif
     
     public func autoPinEdgeToSuperViewEdge(
-        edge: SLEdge,
+        edge: SAEdge,
         var inset: CGFloat = 0.0,
         var relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint
     {
@@ -122,7 +122,7 @@ public extension SLView {
     }
     
     #if os(iOS) || os(tvOS)
-    public func autoPinEdgeToSuperviewMarginEdge(edge: SLEdge, var relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoPinEdgeToSuperviewMarginEdge(edge: SAEdge, var relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         let sView = checkForSuperView()
         
         switch edge {
@@ -144,29 +144,29 @@ public extension SLView {
 
 // MARK: - Align Axes -
 
-public extension SLView {
+public extension SAView {
     
-    public func autoAlignAxis(axis: SLAxis, toSameAxisOfView otherView: SLView, withOffset offset: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func autoAlignAxis(axis: SAAxis, toSameAxisOfView otherView: SAView, withOffset offset: CGFloat = 0.0) -> NSLayoutConstraint {
         return autoConstrain(axis.slAttribute, toAttribute: axis.slAttribute, ofView: otherView, withOffset: offset)
     }
     
-    public func autoAlignAxisWithMultiplier(axis: SLAxis, toSameAxisOfView otherView: SLView, multiplier: CGFloat) -> NSLayoutConstraint {
+    public func autoAlignAxisWithMultiplier(axis: SAAxis, toSameAxisOfView otherView: SAView, multiplier: CGFloat) -> NSLayoutConstraint {
         return autoConstrainWithMultiplier(axis.slAttribute, toAttribute: axis.slAttribute, ofView: otherView, withMultiplier: multiplier)
     }
 }
 
 // MARK: - Match/Set Dimensions -
 
-public extension SLView {
+public extension SAView {
     
-    public func autoMatchSameDimension(dimension: SLDimension, ofView otherView: SLView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoMatchSameDimension(dimension: SADimension, ofView otherView: SAView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         return autoMatchDimension(dimension, toDimension: dimension, ofView: otherView, withOffset: offset, relation: relation)
     }
     
     public func autoMatchDimension(
-        dimension: SLDimension,
-        toDimension: SLDimension,
-        ofView otherView: SLView,
+        dimension: SADimension,
+        toDimension: SADimension,
+        ofView otherView: SAView,
         withOffset offset: CGFloat = 0.0,
         relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint
     {
@@ -182,7 +182,7 @@ public extension SLView {
         return constraints
     }
     
-    public func autoSetDimension(dimension: SLDimension, toSize: CGFloat, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoSetDimension(dimension: SADimension, toSize: CGFloat, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(item: self, attribute: dimension.slAttribute.layoutAttribute, relatedBy: relation, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 0.0, constant: toSize)
@@ -195,7 +195,7 @@ public extension SLView {
 
 // MARK: - Center in Superview -
 
-public extension SLView {
+public extension SAView {
     
     public func autoCenterInSuperView() -> LayoutConstraintsArray {
         var constraints = LayoutConstraintsArray()
@@ -217,7 +217,7 @@ public extension SLView {
     }
     #endif
     
-    public func autoAlignAxisToSuperviewAxis(axis: SLAxis) -> NSLayoutConstraint {
+    public func autoAlignAxisToSuperviewAxis(axis: SAAxis) -> NSLayoutConstraint {
         let sView = checkForSuperView()
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -226,7 +226,7 @@ public extension SLView {
     }
     
     #if os(iOS) || os(tvOS)
-    public func autoAlignAxisToSuperviewMarginAxis(axis: SLAxis) -> NSLayoutConstraint {
+    public func autoAlignAxisToSuperviewMarginAxis(axis: SAAxis) -> NSLayoutConstraint {
         let sView = checkForSuperView()
         
         translatesAutoresizingMaskIntoConstraints = true
@@ -238,20 +238,20 @@ public extension SLView {
 
 // MARK: - Pin Edges -
 
-public extension SLView {
+public extension SAView {
     
-    public func autoPinTopEdgeToBottomEdge(ofView otherView: SLView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoPinTopEdgeToBottomEdge(ofView otherView: SAView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         return autoPinEdge(.Top, toEdge: .Bottom, ofView: otherView, withOffset: offset, relation: relation)
     }
     
-    public func autoPinLeadingEdgeToTrailingEdge(ofView otherView: SLView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoPinLeadingEdgeToTrailingEdge(ofView otherView: SAView, withOffset offset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         return autoPinEdge(.Leading, toEdge: .Trailing, ofView: otherView, withOffset: offset, relation: relation)
     }
     
     public func autoPinEdge(
-        edge: SLEdge,
-        toEdge: SLEdge,
-        ofView otherView: SLView,
+        edge: SAEdge,
+        toEdge: SAEdge,
+        ofView otherView: SAView,
         withOffset offset: CGFloat = 0.0,
         relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint
     {
@@ -261,12 +261,12 @@ public extension SLView {
 
 // MARK: - Constrain Any Attributes -
 
-public extension SLView {
+public extension SAView {
     
     public func autoConstrain(
-        attribute: SLAttribute,
-        toAttribute: SLAttribute, 
-        ofView otherView: SLView,
+        attribute: SAAttribute,
+        toAttribute: SAAttribute, 
+        ofView otherView: SAView,
         withOffset offset: CGFloat = 0.0,
         relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint
     {
@@ -283,9 +283,9 @@ public extension SLView {
     }
     
     public func autoConstrainWithMultiplier(
-        attribute: SLAttribute,
-        toAttribute: SLAttribute,
-        ofView otherView: SLView,
+        attribute: SAAttribute,
+        toAttribute: SAAttribute,
+        ofView otherView: SAView,
         withMultiplier multiplier: CGFloat,
         relation: NSLayoutRelation = .Equal)  -> NSLayoutConstraint
     {
@@ -301,70 +301,70 @@ public extension SLView {
         return constraint
     }
     
-    public func autoAlign(alignment alignment: SLAlignment, toView: SLView, forAxis axis: SLAxis) -> NSLayoutConstraint {
+    public func autoAlign(alignment alignment: SAAlignment, toView: SAView, forAxis axis: SAAxis) -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint
         
         #if os(iOS) || os(tvOS)
             switch alignment {
             case .Vertical:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeVertical.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeVertical.")
                 constraint = autoAlignAxis(.Vertical, toSameAxisOfView: toView)
             case .Horizontal:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeHorizontal.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeHorizontal.")
                 constraint = autoAlignAxis(.Horizontal, toSameAxisOfView: toView)
             case .Baseline:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeBaseline.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeBaseline.")
                 constraint = autoAlignAxis(.Baseline, toSameAxisOfView: toView)
             case .FirstBaseline:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeFirstBaseline.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeFirstBaseline.")
                 constraint = autoAlignAxis(.FirstBaseline, toSameAxisOfView: toView)
             case .Top:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeTop.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeTop.")
                 constraint = autoPinEdge(.Top, toEdge: .Top, ofView: toView)
             case .Left:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeLeft.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeLeft.")
                 constraint = autoPinEdge(.Left, toEdge: .Left, ofView: toView)
             case .Bottom:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeBottom.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeBottom.")
                 constraint = autoPinEdge(.Bottom, toEdge: .Bottom, ofView: toView)
             case .Right:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeRight.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeRight.")
                 constraint = autoPinEdge(.Right, toEdge: .Right, ofView: toView)
             case .Leading:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeLeading.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeLeading.")
                 constraint = autoPinEdge(.Leading, toEdge: .Leading, ofView: toView)
             case .Trailing:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeTrailing.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeTrailing.")
                 constraint = autoPinEdge(.Trailing, toEdge: .Trailing, ofView: toView)
             }
         #else
             switch alignment {
             case .Vertical:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeVertical.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeVertical.")
                 constraint = autoAlignAxis(.Vertical, toSameAxisOfView: toView)
             case .Horizontal:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeHorizontal.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeHorizontal.")
                 constraint = autoAlignAxis(.Horizontal, toSameAxisOfView: toView)
             case .Baseline:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeBaseline.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeBaseline.")
                 constraint = autoAlignAxis(.Baseline, toSameAxisOfView: toView)
             case .Top:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeTop.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeTop.")
                 constraint = autoPinEdge(.Top, toEdge: .Top, ofView: toView)
             case .Left:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeLeft.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeLeft.")
                 constraint = autoPinEdge(.Left, toEdge: .Left, ofView: toView)
             case .Bottom:
-                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SLAttributeBottom.")
+                assert(axis != .Vertical, "Cannot align views that are distributed vertically with SAAttributeBottom.")
                 constraint = autoPinEdge(.Bottom, toEdge: .Bottom, ofView: toView)
             case .Right:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeRight.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeRight.")
                 constraint = autoPinEdge(.Right, toEdge: .Right, ofView: toView)
             case .Leading:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeLeading.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeLeading.")
                 constraint = autoPinEdge(.Leading, toEdge: .Leading, ofView: toView)
             case .Trailing:
-                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SLAttributeTrailing.")
+                assert(axis == .Vertical, "Cannot align views that are distributed horizontally with SAAttributeTrailing.")
                 constraint = autoPinEdge(.Trailing, toEdge: .Trailing, ofView: toView)
             }
         #endif
@@ -376,9 +376,9 @@ public extension SLView {
 // MARK: - Pin to Layout Guides -
 
 #if os(iOS)
-public extension SLView {
+public extension SAView {
     
-    public func autoPinToTopLayoutGuideOfViewController(viewController: SLViewController, withInset inset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoPinToTopLayoutGuideOfViewController(viewController: UIViewController, withInset inset: CGFloat = 0.0, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(item: self, attribute: .Top, relatedBy: relation, toItem: viewController.topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: inset)
@@ -388,7 +388,7 @@ public extension SLView {
         return constraint
     }
     
-    public func autoPinToBottomLayoutGuideOfViewController(viewController: SLViewController, var withInset inset: CGFloat = 0.0, var relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+    public func autoPinToBottomLayoutGuideOfViewController(viewController: UIViewController, var withInset inset: CGFloat = 0.0, var relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         // The bottom inset (and relation, if an inequality) is inverted to become an offset
         inset = -inset
         
@@ -409,11 +409,11 @@ public extension SLView {
 }
 #endif
 
-// MARK: - Install/Update Constraints on SLView -
+// MARK: - Install/Update Constraints on SAView -
 
-public extension SLView {
+public extension SAView {
     
-    public func autoInstallConstraints(identifier: String? = nil, block: SLViewConstraintsBlock) {
+    public func autoInstallConstraints(identifier: String? = nil, block: SAViewConstraintsBlock) {
         let constraints = NSLayoutConstraint.autoCreateConstrainsWithoutInstalling { () -> Void in
             block(view: self)
         }
@@ -425,7 +425,7 @@ public extension SLView {
         constraints.autoInstall()
     }
     
-    public func autoUpdateConstraints(identifier: String? = nil, block: SLViewConstraintsBlock) {
+    public func autoUpdateConstraints(identifier: String? = nil, block: SAViewConstraintsBlock) {
         let newLayoutConstraints = NSLayoutConstraint.autoCreateConstrainsWithoutInstalling { () -> Void in
             block(view: self)
         }
@@ -468,9 +468,9 @@ public extension SLView {
 
 // MARK: - Set Content Compression Resistance & Hugging -
 
-public extension SLView {
+public extension SAView {
     
-    func autoSetContentCompressionResistancePriorityFor(axis: SLAxis) {
+    func autoSetContentCompressionResistancePriorityFor(axis: SAAxis) {
         let isExecuting = NSLayoutConstraint.isExecutingPriorityConstraintsBlock()
         
         guard isExecuting else {
@@ -489,7 +489,7 @@ public extension SLView {
         #endif
     }
     
-    func autoSetContentHuggingPriorityFor(axis: SLAxis) {
+    func autoSetContentHuggingPriorityFor(axis: SAAxis) {
         let isExecuting = NSLayoutConstraint.isExecutingPriorityConstraintsBlock()
         
         guard isExecuting else {
@@ -511,9 +511,9 @@ public extension SLView {
 
 // MARK: - Internal Methods -
 
-private extension SLView {
+private extension SAView {
     
-    func checkForSuperView() -> SLView {
+    func checkForSuperView() -> SAView {
         guard let sView = superview else {
             fatalError("View's superview must not be nil.\nView: \(self)")
         }

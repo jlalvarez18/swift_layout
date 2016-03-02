@@ -1,5 +1,5 @@
 //
-//  SLLayoutConstraint.swift
+//  SALayoutConstraint.swift
 //  Plugd Mac
 //
 //  Created by Juan Alvarez on 2/9/16.
@@ -35,7 +35,7 @@ public extension NSLayoutConstraint {
         return !isInstallingConstraints && arraysOfCreatedConstraints.count > 0
     }
     
-    public class func autoCreateAndInstallConstraints(block: SLConstraintsBlock) -> LayoutConstraintsArray {
+    public class func autoCreateAndInstallConstraints(block: SAConstraintsBlock) -> LayoutConstraintsArray {
         let createdConstraints = autoCreateConstrainsWithoutInstalling(block)
         
         isInstallingConstraints = true
@@ -47,7 +47,7 @@ public extension NSLayoutConstraint {
         return createdConstraints
     }
     
-    public class func autoCreateConstrainsWithoutInstalling(block: SLConstraintsBlock) -> LayoutConstraintsArray {
+    public class func autoCreateConstrainsWithoutInstalling(block: SAConstraintsBlock) -> LayoutConstraintsArray {
         arraysOfCreatedConstraints.append(ConstraintsGroup(constraints: []))
         
         block()
@@ -90,9 +90,9 @@ public extension NSLayoutConstraint {
 
 public extension NSLayoutConstraint {
     
-    private static var globalConstraintPriorities = [SLPriority]()
+    private static var globalConstraintPriorities = [SAPriority]()
     
-    internal class func currentGlobalConstraintPriority() -> SLPriority {
+    internal class func currentGlobalConstraintPriority() -> SAPriority {
         if let priority = globalConstraintPriorities.last {
             return priority
         }
@@ -104,7 +104,7 @@ public extension NSLayoutConstraint {
         return globalConstraintPriorities.count > 0
     }
     
-    public class func autoSetPriority(priority: SLPriority, block: SLConstraintsBlock) {
+    public class func autoSetPriority(priority: SAPriority, block: SAConstraintsBlock) {
         globalConstraintPriorities.append(priority)
         
         block()
@@ -112,7 +112,7 @@ public extension NSLayoutConstraint {
         globalConstraintPriorities.removeLast()
     }
     
-    public func autoPriority(priority: SLPriority) -> NSLayoutConstraint {
+    public func autoPriority(priority: SAPriority) -> NSLayoutConstraint {
         self.priority = priority.layoutPriority
         
         return self
@@ -133,7 +133,7 @@ public extension NSLayoutConstraint {
         return nil
     }
     
-    public class func autoSetIdentifier(identifier: String, forConstraints block: SLConstraintsBlock) {
+    public class func autoSetIdentifier(identifier: String, forConstraints block: SAConstraintsBlock) {
         globalIdentifiers.append(identifier)
         
         block()
@@ -188,17 +188,17 @@ public extension NSLayoutConstraint {
         return dict
     }()
     
-    private static let layoutPriorityDescription: [SLLayoutPriority: String] = {
-        var dict = [SLLayoutPriority: String]()
+    private static let layoutPriorityDescription: [SALayoutPriority: String] = {
+        var dict = [SALayoutPriority: String]()
         
-        dict[SLLayoutPriorityRequired] = "required"
-        dict[SLLayoutPriorityDefaultHigh] = "high"
-        dict[SLLayoutPriorityDefaultLow] = "low"
-        dict[SLLayoutPriorityFittingSizeLevel] = "fitting size"
-        dict[SLLayoutPriorityFittingSizeCompression] = "fitting size compression"
-        dict[SLLayoutPriorityDragThatCanResizeWindow] = "drag can resize window"
-        dict[SLLayoutPriorityDragThatCannotResizeWindow] = "drag cannot resize window"
-        dict[SLLayoutPriorityWindowSizeStayPut] = "window size stay put"
+        dict[SALayoutPriorityRequired] = "required"
+        dict[SALayoutPriorityDefaultHigh] = "high"
+        dict[SALayoutPriorityDefaultLow] = "low"
+        dict[SALayoutPriorityFittingSizeLevel] = "fitting size"
+        dict[SALayoutPriorityFittingSizeCompression] = "fitting size compression"
+        dict[SALayoutPriorityDragThatCanResizeWindow] = "drag can resize window"
+        dict[SALayoutPriorityDragThatCannotResizeWindow] = "drag cannot resize window"
+        dict[SALayoutPriorityWindowSizeStayPut] = "window size stay put"
         
         return dict
     }()
@@ -248,7 +248,7 @@ public extension NSLayoutConstraint {
             descriptionString.appendContentsOf(" \(constantString) \(abs(constant))")
         }
         
-        if priority != SLLayoutPriorityRequired {
+        if priority != SALayoutPriorityRequired {
             let priorityString = NSLayoutConstraint.layoutPriorityDescription[priority] ?? String(priority)
             
             descriptionString.appendContentsOf(" ^\(priorityString)")
@@ -284,7 +284,7 @@ public extension CollectionType where Generator.Element: NSLayoutConstraint {
         }
     }
     
-    public func autoSetPriority(priority: SLPriority) {
+    public func autoSetPriority(priority: SAPriority) {
         for constraint in self {
             constraint.autoPriority(priority)
         }

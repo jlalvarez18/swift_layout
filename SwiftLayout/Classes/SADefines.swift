@@ -1,5 +1,5 @@
 //
-//  SLDefines.swift
+//  SADefines.swift
 //  Plugd Mac
 //
 //  Created by Juan Alvarez on 2/9/16.
@@ -11,58 +11,58 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
     
-    public typealias SLView                                     = UIView
-    public typealias SLEdgeInsets                               = UIEdgeInsets
-    public typealias SLEdgeInsetsZero                           = UIEdgeInsetsZero
-    public typealias SLEdgeInsetsMake                           = UIEdgeInsetsMake
+    public typealias SAView                                     = UIView
+    public typealias SAEdgeInsets                               = UIEdgeInsets
+    public let SAEdgeInsetsZero                                 = UIEdgeInsetsZero
+    public let SAEdgeInsetsMake                                 = UIEdgeInsetsMake
     
-    public typealias SLLayoutConstraintAxis                     = UILayoutConstraintAxis
-    public typealias SLLayoutConstraintOrientation              = ALLayoutConstraintAxis
-    public typealias SLLayoutConstraintAxisHorizontal           = UILayoutConstraintAxisHorizontal
-    public typealias SLLayoutConstraintAxisVertical             = UILayoutConstraintAxisVertical
-    public typealias SLLayoutConstraintOrientationHorizontal    = ALLayoutConstraintAxisHorizontal
-    public typealias SLLayoutConstraintOrientationVertical      = ALLayoutConstraintAxisVertical
+    public typealias SALayoutConstraintAxis                     = UILayoutConstraintAxis
+    public typealias SALayoutConstraintOrientation              = UILayoutConstraintAxis
+    public let SALayoutConstraintAxisHorizontal                 = UILayoutConstraintAxis.Horizontal
+    public let SALayoutConstraintAxisVertical                   = UILayoutConstraintAxis.Vertical
+    public let SALayoutConstraintOrientationHorizontal          = UILayoutConstraintAxis.Horizontal
+    public let SALayoutConstraintOrientationVertical            = UILayoutConstraintAxis.Vertical
     
-    public typealias SLLayoutPriority                           = UILayoutPriority
-    public typealias SLLayoutPriorityRequired                   = UILayoutPriorityRequired
-    public typealias SLLayoutPriorityDefaultHigh                = UILayoutPriorityDefaultHigh
-    public typealias SLLayoutPriorityDefaultLow                 = UILayoutPriorityDefaultLow
-    public typealias SLLayoutPriorityFittingSizeLevel           = UILayoutPriorityFittingSizeLevel
-    public typealias SLLayoutPriorityFittingSizeCompression     = SLLayoutPriorityFittingSizeLevel
-    public typealias SLLayoutPriorityDragThatCanResizeWindow    = SLLayoutPriorityDefaultHigh
-    public typealias SLLayoutPriorityDragThatCannotResizeWindow = SLLayoutPriorityDefaultHigh
-    public typealias SLLayoutPriorityWindowSizeStayPut          = SLLayoutPriorityDefaultHigh
+    public typealias SALayoutPriority                           = UILayoutPriority
+    public let SALayoutPriorityRequired                         = UILayoutPriorityRequired
+    public let SALayoutPriorityDefaultHigh                      = UILayoutPriorityDefaultHigh
+    public let SALayoutPriorityDefaultLow                       = UILayoutPriorityDefaultLow
+    public let SALayoutPriorityFittingSizeLevel                 = UILayoutPriorityFittingSizeLevel
+    public let SALayoutPriorityFittingSizeCompression           = UILayoutPriorityFittingSizeLevel
+    public let SALayoutPriorityDragThatCanResizeWindow          = UILayoutPriorityDefaultHigh
+    public let SALayoutPriorityDragThatCannotResizeWindow       = UILayoutPriorityDefaultHigh
+    public let SALayoutPriorityWindowSizeStayPut                = UILayoutPriorityDefaultHigh
 #else
     import Cocoa
     
-    public typealias SLView                                 = NSView
-    public typealias SLEdgeInsets                           = NSEdgeInsets
-    public let SLEdgeInsetsZero                             = NSEdgeInsetsZero
-    public let SLEdgeInsetsMake                             = NSEdgeInsetsMake
+    public typealias SAView                                 = NSView
+    public typealias SAEdgeInsets                           = NSEdgeInsets
+    public let SAEdgeInsetsZero                             = NSEdgeInsetsZero
+    public let SAEdgeInsetsMake                             = NSEdgeInsetsMake
    
-    public typealias SLLayoutConstraintOrientation          = NSLayoutConstraintOrientation
-    public typealias SLLayoutConstraintAxis                 = NSLayoutConstraintOrientation
-    public let SLLayoutConstraintOrientationHorizontal      = NSLayoutConstraintOrientation.Horizontal
-    public let SLLayoutConstraintOrientationVertical        = NSLayoutConstraintOrientation.Vertical
-    public let SLLayoutConstraintAxisHorizontal             = NSLayoutConstraintOrientation.Horizontal
-    public let SLLayoutConstraintAxisVertical               = NSLayoutConstraintOrientation.Vertical
+    public typealias SALayoutConstraintOrientation          = NSLayoutConstraintOrientation
+    public typealias SALayoutConstraintAxis                 = NSLayoutConstraintOrientation
+    public let SALayoutConstraintOrientationHorizontal      = NSLayoutConstraintOrientation.Horizontal
+    public let SALayoutConstraintOrientationVertical        = NSLayoutConstraintOrientation.Vertical
+    public let SALayoutConstraintAxisHorizontal             = NSLayoutConstraintOrientation.Horizontal
+    public let SALayoutConstraintAxisVertical               = NSLayoutConstraintOrientation.Vertical
     
-    public typealias SLLayoutPriority                       = NSLayoutPriority
-    public let SLLayoutPriorityRequired                     = NSLayoutPriorityRequired
-    public let SLLayoutPriorityDefaultHigh                  = NSLayoutPriorityDefaultHigh
-    public let SLLayoutPriorityDefaultLow                   = NSLayoutPriorityDefaultLow
-    public let SLLayoutPriorityFittingSizeLevel             = NSLayoutPriorityFittingSizeCompression
-    public let SLLayoutPriorityFittingSizeCompression       = NSLayoutPriorityFittingSizeCompression
-    public let SLLayoutPriorityDragThatCanResizeWindow      = NSLayoutPriorityDragThatCanResizeWindow
-    public let SLLayoutPriorityDragThatCannotResizeWindow   = NSLayoutPriorityDragThatCannotResizeWindow
-    public let SLLayoutPriorityWindowSizeStayPut            = NSLayoutPriorityWindowSizeStayPut
+    public typealias SALayoutPriority                       = NSLayoutPriority
+    public let SALayoutPriorityRequired                     = NSLayoutPriorityRequired
+    public let SALayoutPriorityDefaultHigh                  = NSLayoutPriorityDefaultHigh
+    public let SALayoutPriorityDefaultLow                   = NSLayoutPriorityDefaultLow
+    public let SALayoutPriorityFittingSizeLevel             = NSLayoutPriorityFittingSizeCompression
+    public let SALayoutPriorityFittingSizeCompression       = NSLayoutPriorityFittingSizeCompression
+    public let SALayoutPriorityDragThatCanResizeWindow      = NSLayoutPriorityDragThatCanResizeWindow
+    public let SALayoutPriorityDragThatCannotResizeWindow   = NSLayoutPriorityDragThatCannotResizeWindow
+    public let SALayoutPriorityWindowSizeStayPut            = NSLayoutPriorityWindowSizeStayPut
 #endif
 
 public typealias LayoutConstraintsArray = [NSLayoutConstraint]
-public typealias SLConstraintsBlock = () -> Void
-public typealias SLViewConstraintsBlock = (view: SLView) -> Void
+public typealias SAConstraintsBlock = () -> Void
+public typealias SAViewConstraintsBlock = (view: SAView) -> Void
 
-public enum SLAttribute {
+public enum SAAttribute {
     case Left
     case Right
     case Top
@@ -136,30 +136,30 @@ public enum SLAttribute {
     }
 }
 
-public enum SLPriority {
+public enum SAPriority {
     case Required
     case High
     case Low
     case Custom(Float)
     
-    var layoutPriority: SLLayoutPriority {
+    var layoutPriority: SALayoutPriority {
         switch self {
-        case .Required:             return SLLayoutPriorityRequired
-        case .High:                 return SLLayoutPriorityDefaultHigh
-        case .Low:                  return SLLayoutPriorityDefaultLow
+        case .Required:             return SALayoutPriorityRequired
+        case .High:                 return SALayoutPriorityDefaultHigh
+        case .Low:                  return SALayoutPriorityDefaultLow
         case .Custom(let value):    return value
         }
     }
 }
 
-public enum SLAxis {
+public enum SAAxis {
     case Vertical
     case Horizontal
     case Baseline
     case LastBaseline
     case FirstBaseline
     
-    var slAttribute: SLAttribute {
+    var slAttribute: SAAttribute {
         switch self {
         case .Vertical:         return .AxisVertical
         case .Horizontal:       return .AxisHorizontal
@@ -169,16 +169,16 @@ public enum SLAxis {
         }
     }
     
-    var constraintAxis: SLLayoutConstraintAxis {
+    var constraintAxis: SALayoutConstraintAxis {
         switch self {
-        case .Vertical: return SLLayoutConstraintAxis.Vertical
+        case .Vertical: return SALayoutConstraintAxis.Vertical
         case .Horizontal, .Baseline, .FirstBaseline, .LastBaseline:
-            return SLLayoutConstraintAxis.Horizontal
+            return SALayoutConstraintAxis.Horizontal
         }
     }
     
     #if os(iOS) || os(tvOS)
-    var slMarginAttribute: SLAttribute {
+    var slMarginAttribute: SAAttribute {
         switch self {
         case .Vertical:     return .MarginAxisVertical
         case .Horizontal:   return .MarginAxisHorizontal
@@ -189,7 +189,7 @@ public enum SLAxis {
     #endif
 }
 
-public enum SLEdge {
+public enum SAEdge {
     case Left
     case Right
     case Top
@@ -197,7 +197,7 @@ public enum SLEdge {
     case Leading
     case Trailing
     
-    var slAttribute: SLAttribute {
+    var slAttribute: SAAttribute {
         switch self {
         case .Left:     return .Left
         case .Right:    return .Right
@@ -209,7 +209,7 @@ public enum SLEdge {
     }
     
     #if os(iOS) || os(tvOS)
-    var margin: SLMargin {
+    var margin: SAMargin {
         switch self {
         case .Left:     return .Left
         case .Right:    return .Right
@@ -223,7 +223,7 @@ public enum SLEdge {
 }
 
 #if os(iOS) || os(tvOS)
-    public enum SLMargin {
+    public enum SAMargin {
         case Left
         case Right
         case Top
@@ -231,7 +231,7 @@ public enum SLEdge {
         case Leading
         case Trailing
         
-        var slAttribute: SLAttribute {
+        var slAttribute: SAAttribute {
             switch self {
             case .Left:
                 return .MarginLeft
@@ -250,7 +250,7 @@ public enum SLEdge {
     }
 #endif
 
-public enum SLAlignment {
+public enum SAAlignment {
     case Vertical
     case Horizontal
     case Baseline
@@ -266,7 +266,7 @@ public enum SLAlignment {
     case Leading
     case Trailing
     
-    var slAttribute: SLAttribute {
+    var slAttribute: SAAttribute {
         #if os(iOS) || os(tvOS)
             switch self {
             case .Vertical:         return .AxisVertical
@@ -274,6 +274,7 @@ public enum SLAlignment {
             case .Baseline:         return .AxisBaseline
             case .FirstBaseline:    return .AxisFirstBaseline
             case .Top:              return .Top
+            case .Left:             return .Left
             case .Bottom:           return .Bottom
             case .Right:            return .Right
             case .Leading:          return .Leading
@@ -295,11 +296,11 @@ public enum SLAlignment {
     }
 }
 
-public enum SLDimension {
+public enum SADimension {
     case Width
     case Height
     
-    var slAttribute: SLAttribute {
+    var slAttribute: SAAttribute {
         switch self {
         case .Width:    return .Width
         case .Height:   return .Height

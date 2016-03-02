@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DA486391C866C5000B3D9B8 /* SLArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486351C866C5000B3D9B8 /* SLArray.swift */; };
-		0DA4863A1C866C5000B3D9B8 /* SLDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486361C866C5000B3D9B8 /* SLDefines.swift */; };
-		0DA4863B1C866C5000B3D9B8 /* SLLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */; };
-		0DA4863C1C866C5000B3D9B8 /* SLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486381C866C5000B3D9B8 /* SLView.swift */; };
+		0DA486421C86727F00B3D9B8 /* SAArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4863E1C86727F00B3D9B8 /* SAArray.swift */; };
+		0DA486431C86727F00B3D9B8 /* SADefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4863F1C86727F00B3D9B8 /* SADefines.swift */; };
+		0DA486441C86727F00B3D9B8 /* SALayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486401C86727F00B3D9B8 /* SALayoutConstraint.swift */; };
+		0DA486451C86727F00B3D9B8 /* SAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486411C86727F00B3D9B8 /* SAView.swift */; };
 		0DBC620B1C61126900F5033F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC620A1C61126900F5033F /* AppDelegate.swift */; };
 		0DBC620D1C61126900F5033F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC620C1C61126900F5033F /* ViewController.swift */; };
 		0DBC62101C61126900F5033F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC620E1C61126900F5033F /* Main.storyboard */; };
@@ -30,10 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DA486351C866C5000B3D9B8 /* SLArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLArray.swift; sourceTree = "<group>"; };
-		0DA486361C866C5000B3D9B8 /* SLDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDefines.swift; sourceTree = "<group>"; };
-		0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLLayoutConstraint.swift; sourceTree = "<group>"; };
-		0DA486381C866C5000B3D9B8 /* SLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLView.swift; sourceTree = "<group>"; };
+		0DA4863E1C86727F00B3D9B8 /* SAArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAArray.swift; sourceTree = "<group>"; };
+		0DA4863F1C86727F00B3D9B8 /* SADefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SADefines.swift; sourceTree = "<group>"; };
+		0DA486401C86727F00B3D9B8 /* SALayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SALayoutConstraint.swift; sourceTree = "<group>"; };
+		0DA486411C86727F00B3D9B8 /* SAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAView.swift; sourceTree = "<group>"; };
 		0DBC62071C61126900F5033F /* SwiftLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBC620A1C61126900F5033F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DBC620C1C61126900F5033F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DA4863D1C86727F00B3D9B8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0DA4863E1C86727F00B3D9B8 /* SAArray.swift */,
+				0DA4863F1C86727F00B3D9B8 /* SADefines.swift */,
+				0DA486401C86727F00B3D9B8 /* SALayoutConstraint.swift */,
+				0DA486411C86727F00B3D9B8 /* SAView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		0DBC61FE1C61126900F5033F = {
 			isa = PBXGroup;
 			children = (
@@ -91,10 +102,7 @@
 				0DBC62111C61126900F5033F /* Assets.xcassets */,
 				0DBC62131C61126900F5033F /* LaunchScreen.storyboard */,
 				0DBC62161C61126900F5033F /* Info.plist */,
-				0DA486351C866C5000B3D9B8 /* SLArray.swift */,
-				0DA486361C866C5000B3D9B8 /* SLDefines.swift */,
-				0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */,
-				0DA486381C866C5000B3D9B8 /* SLView.swift */,
+				0DA4863D1C86727F00B3D9B8 /* Classes */,
 			);
 			path = SwiftLayout;
 			sourceTree = "<group>";
@@ -209,12 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA486451C86727F00B3D9B8 /* SAView.swift in Sources */,
+				0DA486431C86727F00B3D9B8 /* SADefines.swift in Sources */,
+				0DA486421C86727F00B3D9B8 /* SAArray.swift in Sources */,
+				0DA486441C86727F00B3D9B8 /* SALayoutConstraint.swift in Sources */,
 				0DBC620D1C61126900F5033F /* ViewController.swift in Sources */,
-				0DA486391C866C5000B3D9B8 /* SLArray.swift in Sources */,
-				0DA4863B1C866C5000B3D9B8 /* SLLayoutConstraint.swift in Sources */,
 				0DBC620B1C61126900F5033F /* AppDelegate.swift in Sources */,
-				0DA4863A1C866C5000B3D9B8 /* SLDefines.swift in Sources */,
-				0DA4863C1C866C5000B3D9B8 /* SLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

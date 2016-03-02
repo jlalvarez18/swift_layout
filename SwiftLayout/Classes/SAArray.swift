@@ -1,5 +1,5 @@
 //
-//  SLArray.swift
+//  SAArray.swift
 //  Plugd Mac
 //
 //  Created by Juan Alvarez on 2/9/16.
@@ -12,15 +12,15 @@
     import Cocoa
 #endif
 
-public extension CollectionType where Generator.Element: SLView {
+public extension CollectionType where Generator.Element: SAView {
     
-    public func autoAlignViewsToEdge(edge: SLEdge) -> LayoutConstraintsArray {
+    public func autoAlignViewsToEdge(edge: SAEdge) -> LayoutConstraintsArray {
         guard self.count >= 2 else {
             fatalError("This array must contain at least 2 views")
         }
         
         var constraints = LayoutConstraintsArray()
-        var previousView: SLView?
+        var previousView: SAView?
         
         for view in self {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,13 +35,13 @@ public extension CollectionType where Generator.Element: SLView {
         return constraints
     }
     
-    public func autoAlignViewsToAxis(axis: SLAxis) -> LayoutConstraintsArray {
+    public func autoAlignViewsToAxis(axis: SAAxis) -> LayoutConstraintsArray {
         guard self.count >= 2 else {
             fatalError("This array must contain at least 2 views")
         }
         
         var constraints = LayoutConstraintsArray()
-        var previousView: SLView?
+        var previousView: SAView?
         
         for view in self {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,13 +56,13 @@ public extension CollectionType where Generator.Element: SLView {
         return constraints
     }
     
-    public func autoMatchViewsToDimension(dimension: SLDimension) -> LayoutConstraintsArray {
+    public func autoMatchViewsToDimension(dimension: SADimension) -> LayoutConstraintsArray {
         guard self.count >= 2 else {
             fatalError("This array must contain at least 2 views")
         }
         
         var constraints = LayoutConstraintsArray()
-        var previousView: SLView?
+        var previousView: SAView?
         
         for view in self {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +77,7 @@ public extension CollectionType where Generator.Element: SLView {
         return constraints
     }
     
-    public func autoSetViewsDimension(dimension: SLDimension, toSize: CGFloat) -> LayoutConstraintsArray {
+    public func autoSetViewsDimension(dimension: SADimension, toSize: CGFloat) -> LayoutConstraintsArray {
         guard self.count >= 2 else {
             fatalError("This array must contain at least 2 views")
         }
@@ -103,8 +103,8 @@ public extension CollectionType where Generator.Element: SLView {
     }
     
     public func autoDistributeViewsAlong(
-        axis: SLAxis,
-        alignedTo alignment: SLAlignment,
+        axis: SAAxis,
+        alignedTo alignment: SAAlignment,
         withFixedSpacing spacing: CGFloat,
         insetSpacing shouldSpaceInsets: Bool = true,
         matchedSizes shouldMatchSizes: Bool = true) -> LayoutConstraintsArray
@@ -113,9 +113,9 @@ public extension CollectionType where Generator.Element: SLView {
             fatalError("This array must contain at least 1 view to distribute.")
         }
         
-        let matchedDimension: SLDimension
-        let firstEdge: SLEdge
-        let lastEdge: SLEdge
+        let matchedDimension: SADimension
+        let firstEdge: SAEdge
+        let lastEdge: SAEdge
         
         switch axis {
         case .Horizontal, .Baseline, .FirstBaseline:
@@ -135,7 +135,7 @@ public extension CollectionType where Generator.Element: SLView {
         
         var constraints = LayoutConstraintsArray()
         
-        var previousView: SLView?
+        var previousView: SAView?
         
         for view in self {
             view.translatesAutoresizingMaskIntoConstraints = false
