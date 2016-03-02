@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA486391C866C5000B3D9B8 /* SLArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486351C866C5000B3D9B8 /* SLArray.swift */; };
+		0DA4863A1C866C5000B3D9B8 /* SLDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486361C866C5000B3D9B8 /* SLDefines.swift */; };
+		0DA4863B1C866C5000B3D9B8 /* SLLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */; };
+		0DA4863C1C866C5000B3D9B8 /* SLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA486381C866C5000B3D9B8 /* SLView.swift */; };
 		0DBC620B1C61126900F5033F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC620A1C61126900F5033F /* AppDelegate.swift */; };
 		0DBC620D1C61126900F5033F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC620C1C61126900F5033F /* ViewController.swift */; };
 		0DBC62101C61126900F5033F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC620E1C61126900F5033F /* Main.storyboard */; };
 		0DBC62121C61126900F5033F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC62111C61126900F5033F /* Assets.xcassets */; };
 		0DBC62151C61126900F5033F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC62131C61126900F5033F /* LaunchScreen.storyboard */; };
 		0DBC62201C61126A00F5033F /* SwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC621F1C61126A00F5033F /* SwiftLayoutTests.swift */; };
-		0DBC622B1C61129400F5033F /* SLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC622A1C61129400F5033F /* SLView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DA486351C866C5000B3D9B8 /* SLArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLArray.swift; sourceTree = "<group>"; };
+		0DA486361C866C5000B3D9B8 /* SLDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDefines.swift; sourceTree = "<group>"; };
+		0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLLayoutConstraint.swift; sourceTree = "<group>"; };
+		0DA486381C866C5000B3D9B8 /* SLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLView.swift; sourceTree = "<group>"; };
 		0DBC62071C61126900F5033F /* SwiftLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBC620A1C61126900F5033F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DBC620C1C61126900F5033F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +44,6 @@
 		0DBC621B1C61126A00F5033F /* SwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBC621F1C61126A00F5033F /* SwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLayoutTests.swift; sourceTree = "<group>"; };
 		0DBC62211C61126A00F5033F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DBC622A1C61129400F5033F /* SLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +91,10 @@
 				0DBC62111C61126900F5033F /* Assets.xcassets */,
 				0DBC62131C61126900F5033F /* LaunchScreen.storyboard */,
 				0DBC62161C61126900F5033F /* Info.plist */,
-				0DBC622A1C61129400F5033F /* SLView.swift */,
+				0DA486351C866C5000B3D9B8 /* SLArray.swift */,
+				0DA486361C866C5000B3D9B8 /* SLDefines.swift */,
+				0DA486371C866C5000B3D9B8 /* SLLayoutConstraint.swift */,
+				0DA486381C866C5000B3D9B8 /* SLView.swift */,
 			);
 			path = SwiftLayout;
 			sourceTree = "<group>";
@@ -201,8 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DBC620D1C61126900F5033F /* ViewController.swift in Sources */,
+				0DA486391C866C5000B3D9B8 /* SLArray.swift in Sources */,
+				0DA4863B1C866C5000B3D9B8 /* SLLayoutConstraint.swift in Sources */,
 				0DBC620B1C61126900F5033F /* AppDelegate.swift in Sources */,
-				0DBC622B1C61129400F5033F /* SLView.swift in Sources */,
+				0DA4863A1C866C5000B3D9B8 /* SLDefines.swift in Sources */,
+				0DA4863C1C866C5000B3D9B8 /* SLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +404,7 @@
 				0DBC62261C61126A00F5033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DBC62271C61126A00F5033F /* Build configuration list for PBXNativeTarget "SwiftLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +413,7 @@
 				0DBC62291C61126A00F5033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
